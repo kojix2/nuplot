@@ -1,0 +1,9 @@
+name: crystal_gnuplot_toy
+version: 0.1.0
+
+authors:
+  - kojix2 <kojix2@users.noreply.github.com>
+
+crystal: 0.24.1
+
+license: MIT
