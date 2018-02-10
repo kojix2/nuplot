@@ -1,4 +1,4 @@
-require "./gnuplot/*"
+require "./crystal_gnuplot_toy/*"
 
 module Gnuplot
   def self.plot
@@ -6,11 +6,14 @@ module Gnuplot
     gargs.unshift "gnuplot -p  << EOF"
     gargs.push "EOF"
     gcmd = gargs.join("\n")
+    puts gcmd
     args = ["-c", gcmd]
+
     stdout = IO::Memory.new
     stderr = IO::Memory.new
-    puts args
-    status = Process.run("sh", args, output: stdout)
-    puts status.success?
+    status = Process.run("sh", args, output: stdout, error: stderr)
+    unless status.success?
+      puts stderr.to_s
+    end
   end
 end

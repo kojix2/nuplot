@@ -1,9 +1,5 @@
 require "./spec_helper"
 
-describe CrystalGnuplotToy do
-  # TODO: Write tests
-
-  it "works" do
-    false.should eq(true)
-  end
+describe Array do
+  [1,2,3].to_gp.should eq "1\n2\n3\ne"
 end
