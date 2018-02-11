@@ -36,6 +36,7 @@ end
 memo = 0
 x = Array(Float64).new(100,0.0)
 
+# Optimistic random walk
 100.times do |i|
   memo = memo + rand(-0.9..1.0)
   x[i] = memo
