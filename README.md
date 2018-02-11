@@ -17,11 +17,13 @@ dependencies:
 ```crystal
 require "crystal_gnuplot_toy"
 ```
+![sin(x)](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/sin.png)
 ```crystal
 Gnuplot.plot do |s|
   s << "plot sin(x)"
 end
 ```
+![scatter plot](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/scatter.png)
 ```crystal
 x = Array(Float64).new(100){ rand(10.0..20.0) }
 y = Array(Float64).new(100){ rand(100.0..200.0) }
@@ -32,6 +34,7 @@ Gnuplot.plot do |s|
   s << [x, y].to_gp
 end
 ```
+![lines plot](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/lines.png)
 ```crystal
 memo = 0
 x = Array(Float64).new(100,0.0)
