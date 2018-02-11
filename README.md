@@ -1,6 +1,6 @@
 # crystal_gnuplot_toy
 
-TODO: Write a description here
+This is a minimum tool for running Gnuplot with Crystal. 
 
 ## Installation
 
@@ -9,7 +9,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   crystal_gnuplot_toy:
-    github: [your-github-name]/crystal_gnuplot_toy
+    github: kojix2/crystal_gnuplot_toy
 ```
 
 ## Usage
@@ -17,20 +17,44 @@ dependencies:
 ```crystal
 require "crystal_gnuplot_toy"
 ```
+```crystal
+Gnuplot.plot do |s|
+  s << "plot sin(x)"
+end
+```
+```crystal
+x = Array(Float64).new(100){ rand(10.0..20.0) }
+y = Array(Float64).new(100){ rand(100.0..200.0) }
 
-TODO: Write usage instructions here
+Gnuplot.plot do |s|
+  s << "set title 'SCATTER'"
+  s << "plot '-' pt 6 lt rgb 'red' t 'circle'"
+  s << [x, y].to_gp
+end
+```
+```crystal
+memo = 0
+x = Array(Float64).new(100,0.0)
+
+100.times do |i|
+  memo = memo + rand(-0.9..1.0)
+  x[i] = memo
+end
+
+Gnuplot.plot do |s|
+  s << "set title 'LINES'"
+  s << "plot '-' with lines title 'x'"
+  s << x.to_gp
+end
+```
 
 ## Development
-
-TODO: Write development instructions here
+I want an easy-to-use Gnuplot library running on Crystal.
+I had no choice but to write this tool myself.
+Can anyone make plotting tools easy to use in crystal language?
 
 ## Contributing
-
-1. Fork it ( https://github.com/[your-github-name]/crystal_gnuplot_toy/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
+Pull requests are always welcome.
 
 ## Contributors
 
