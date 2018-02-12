@@ -1,2 +1,2 @@
 require "spec"
-require "../src/crystal_gnuplot_toy"
+require "../src/nuplot.cr"

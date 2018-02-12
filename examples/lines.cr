@@ -1,4 +1,4 @@
-require "../src/crystal_gnuplot_toy.cr"
+require "../src/nuplot.cr"
 
 memo_x1 = 0
 memo_x2 = 0

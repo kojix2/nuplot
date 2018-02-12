@@ -1,4 +1,4 @@
-# crystal_gnuplot_toy
+# nuplot
 
 This is a minimum tool for running Gnuplot with Crystal. 
 
@@ -8,22 +8,22 @@ Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
-  crystal_gnuplot_toy:
-    github: kojix2/crystal_gnuplot_toy
+  nuplot:
+    github: kojix2/nuplot
 ```
 
 ## Usage
 
 ```crystal
-require "crystal_gnuplot_toy"
+require "nuplot"
 ```
-![sin(x)](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/sin.png)
+![sin(x)](https://raw.githubusercontent.com/kojix2/nuplot/master/img/sin.png)
 ```crystal
 Gnuplot.plot do |s|
   s << "plot sin(x)"
 end
 ```
-![scatter plot](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/scatter2d.png)
+![scatter plot](https://raw.githubusercontent.com/kojix2/nuplot/master/img/scatter2d.png)
 ```crystal
 x = Array(Float64).new(100){ rand(10.0..20.0) }
 y = Array(Float64).new(100){ rand(100.0..200.0) }
@@ -34,7 +34,7 @@ Gnuplot.plot do |s|
   s << [x, y].to_gp
 end
 ```
-![lines plot](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/lines.png)
+![lines plot](https://raw.githubusercontent.com/kojix2/nuplot/master/img/lines.png)
 ```crystal
 memo = 0
 x = Array(Float64).new(100,0.0)
@@ -51,7 +51,7 @@ Gnuplot.plot do |s|
   s << x.to_gp
 end
 ```
-![scatter plot 3d](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/scatter3d.png)
+![scatter plot 3d](https://raw.githubusercontent.com/kojix2/nuplot/master/img/scatter3d.png)
 ```crystal
 x = Array(Float64).new(1000){ rand(-10.0..10.0) }
 y = Array(Float64).new(1000){ rand(-10.0..10.0) }
@@ -70,7 +70,3 @@ What I do not do
 
 ## Contributing
 Pull requests are always welcome.
-
-## Contributors
-
-- [[your-github-name]](https://github.com/[your-github-name]) kojix2 - creator, maintainer

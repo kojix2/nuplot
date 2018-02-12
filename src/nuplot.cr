@@ -1,4 +1,4 @@
-require "./crystal_gnuplot_toy/*"
+require "./nuplot/*"
 
 module Gnuplot
   def self.plot

@@ -1,4 +1,4 @@
-require "../src/crystal_gnuplot_toy.cr"
+require "../src/nuplot.cr"
 
 x = Array(Float64).new(100){ rand(10.0..20.0) }
 y = Array(Float64).new(100){ rand(100.0..200.0) }
