@@ -23,7 +23,7 @@ Gnuplot.plot do |s|
   s << "plot sin(x)"
 end
 ```
-![scatter plot](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/scatter.png)
+![scatter plot](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/scatter2d.png)
 ```crystal
 x = Array(Float64).new(100){ rand(10.0..20.0) }
 y = Array(Float64).new(100){ rand(100.0..200.0) }
@@ -49,6 +49,18 @@ Gnuplot.plot do |s|
   s << "set title 'LINES'"
   s << "plot '-' with lines title 'x'"
   s << x.to_gp
+end
+```
+![scatter plot 3d](https://raw.githubusercontent.com/kojix2/crystal_gnuplot_toy/master/img/scatter3d.png)
+```crystal
+x = Array(Float64).new(1000){ rand(-10.0..10.0) }
+y = Array(Float64).new(1000){ rand(-10.0..10.0) }
+z = Array(Float64).new(1000){ |i| x[i]**2 + y[i]**2 }
+
+Gnuplot.plot do |s|
+  s << "set title 'SCATTER 3D'"
+  s << "splot '-' pt 6 t 'z=x^2+y^2'"
+  s << [x,y,z].to_gp
 end
 ```
 
