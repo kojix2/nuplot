@@ -65,9 +65,8 @@ end
 ```
 
 ## Development
-I want an easy-to-use Gnuplot library running on Crystal.
-I had no choice but to write this tool myself.
-Can anyone make plotting tools easy to use in crystal language?
+What I do not do
+- Replacing the gnuplot idiom with a new Crystal object.
 
 ## Contributing
 Pull requests are always welcome.
