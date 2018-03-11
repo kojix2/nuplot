@@ -31,7 +31,7 @@ y = Array(Float64).new(100){ rand(100.0..200.0) }
 Gnuplot.plot do |s|
   s << "set title 'SCATTER'"
   s << "plot '-' pt 6 lt rgb 'red' t 'circle'"
-  s << [x, y].to_gp
+  s << to_gp([x, y])
 end
 ```
 ![lines plot](https://raw.githubusercontent.com/kojix2/nuplot/master/img/lines.png)
@@ -48,7 +48,7 @@ end
 Gnuplot.plot do |s|
   s << "set title 'LINES'"
   s << "plot '-' with lines title 'x'"
-  s << x.to_gp
+  s << to_gp(x)
 end
 ```
 ![scatter plot 3d](https://raw.githubusercontent.com/kojix2/nuplot/master/img/scatter3d.png)
@@ -60,7 +60,7 @@ z = Array(Float64).new(1000){ |i| x[i]**2 + y[i]**2 }
 Gnuplot.plot do |s|
   s << "set title 'SCATTER 3D'"
   s << "splot '-' pt 6 t 'z=x^2+y^2'"
-  s << [x,y,z].to_gp
+  s << to_gp([x,y,z])
 end
 ```
 
@@ -69,4 +69,6 @@ What I do not do
 - Replacing the gnuplot idiom with a new Crystal object.
 
 ## Contributing
+- bird1079s
+
 Pull requests are always welcome.
