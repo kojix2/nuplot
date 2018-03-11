@@ -16,6 +16,6 @@ end
 Gnuplot.plot do |s|
   s << "set title 'LINES'"
   s << "plot '-' with lines title 'x1', '-' with lines title 'x2'"
-  s << x1.to_gp
-  s << x2.to_gp
+  s << to_gp(x1)
+  s << to_gp(x2)
 end

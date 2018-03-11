@@ -8,5 +8,5 @@ Gnuplot.plot do |s|
   s << "set xrange[5:25]"
   s << "set yrange[50:250]"
   s << "plot '-' pt 6 lt rgb 'red' t 'circle'"
-  s << [x,y].to_gp
+  s << to_gp([x,y])
 end
