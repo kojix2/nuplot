@@ -11,8 +11,5 @@ def to_gp(array : Array)
 end
 
 def gp_escape(arr : Array(String))
-  arr.map do |s|
-    s = s.gsub("\"","\\\"")
-    '"' + s + '"'
-  end
+  arr.map(&.inspect)
 end
